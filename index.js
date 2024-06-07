@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5173' })); // Add your React app's origin here
+app.use(cors({ origin: 'https://omose.vercel.app/' })); // Add your React app's origin here
 
 // Multer storage configuration
 const storage = multer.diskStorage({
