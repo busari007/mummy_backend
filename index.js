@@ -32,6 +32,18 @@ db.connect((err) => {
   }
 });
 
+app.get('/',(req,res)=>{
+  db.query('SELECT * FROM files', (err, result) => {
+      if (err) {
+        console.error('Error executing the SELECT query:', err); 
+      }else{
+       console.log("Data retrieved");
+      res.json(result);
+      }
+      }
+  );
+});
+
 // Multer storage configuration
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
