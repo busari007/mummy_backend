@@ -33,15 +33,7 @@ db.connect((err) => {
 });
 
 app.get('/',(req,res)=>{
-  db.query('SELECT * FROM files', (err, result) => {
-      if (err) {
-        console.error('Error executing the SELECT query:', err); 
-      }else{
-       console.log("Data retrieved");
-      res.json(result);
-      }
-      }
-  );
+  res.send("Backend is functional");
 });
 
 // Multer storage configuration
